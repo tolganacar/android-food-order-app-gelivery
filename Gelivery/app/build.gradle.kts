@@ -10,6 +10,10 @@ android {
     namespace = "com.tolganacar.foodorderapp"
     compileSdk = 34
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.tolganacar.foodorderapp"
         minSdk = 24
