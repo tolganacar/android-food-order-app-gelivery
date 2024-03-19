@@ -14,9 +14,9 @@
         android:textColor="@color/black"
         android:textSize="28sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewFoodPrice"
-        app:layout_constraintEnd_toStartOf="@+id/textViewFoodPrice"
-        app:layout_constraintTop_toTopOf="@+id/textViewFoodPrice" />
+        app:layout_constraintBottom_toBottomOf="@+id/textViewFoodPriceDetail"
+        app:layout_constraintEnd_toStartOf="@+id/textViewFoodPriceDetail"
+        app:layout_constraintTop_toTopOf="@+id/textViewFoodPriceDetail" />
 
     <ImageView
         android:id="@+id/imageViewStar"
@@ -26,7 +26,7 @@
         android:layout_marginTop="16dp"
         android:src="@drawable/star"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewFoodName" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewFoodNameDetail" />
 
     <TextView
         android:id="@+id/textViewStar"
@@ -51,7 +51,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/imageViewTime"
         app:layout_constraintStart_toEndOf="@+id/textViewStar"
-        app:layout_constraintTop_toBottomOf="@+id/textViewFoodName" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewFoodNameDetail" />
 
     <ImageView
         android:id="@+id/imageViewFire"
@@ -64,7 +64,7 @@
         app:layout_constraintTop_toTopOf="@+id/textViewKcal" />
 
     <TextView
-        android:id="@+id/textViewFoodPrice"
+        android:id="@+id/textViewFoodPriceDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -77,14 +77,14 @@
         tools:text="6.73" />
 
     <ImageView
-        android:id="@+id/imageViewFood"
+        android:id="@+id/imageViewFoodDetail"
         android:layout_width="230dp"
         android:layout_height="230dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarFoodDetail"
         tools:src="@drawable/izgarasomon" />
 
     <androidx.cardview.widget.CardView
@@ -92,13 +92,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
         app:cardBackgroundColor="@color/yellow"
         app:cardCornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewFood">
+        app:layout_constraintTop_toBottomOf="@+id/imageViewFoodDetail">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -147,7 +147,7 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/textViewFoodName"
+        android:id="@+id/textViewFoodNameDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -175,11 +175,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="@string/_5_10_min"
+        android:text="@string/_20_min"
         android:textColor="@color/hint_color"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewFoodPrice" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewFoodPriceDetail" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewAddToCart"
@@ -253,9 +253,9 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewKcal" />
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+        android:id="@+id/toolbarFoodDetail"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="55dp"
         android:background="@color/yellow"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
