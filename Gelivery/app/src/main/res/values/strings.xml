@@ -9,4 +9,6 @@
     <string name="description">Grab your fork, knife or raise your glass and prepare yourself to embark on this delicious journey. Enjoy and have a delightful experience with every sip or bite. Good foods!</string>
     <string name="order_detail">Order Detail</string>
     <string name="tl">₺</string>
+    <string name="home">Home</string>
+    <string name="cart">Cart</string>
 </resources>

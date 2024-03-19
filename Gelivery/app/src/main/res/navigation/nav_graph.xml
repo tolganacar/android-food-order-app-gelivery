@@ -23,4 +23,9 @@
             android:name="food"
             app:argType="com.tolganacar.foodorderapp.data.entity.Foods" />
     </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.tolganacar.foodorderapp.ui.fragments.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" />
 </navigation>
