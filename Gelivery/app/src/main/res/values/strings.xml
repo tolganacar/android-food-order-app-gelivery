@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">Gelivery</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="increase_quantity">+</string>
+    <string name="decrease_quantity">–</string>
+    <string name="_5_10_min">5-10 min</string>
+    <string name="_150_kcal">150 Kcal</string>
+    <string name="_1">1</string>
+    <string name="add_to_cart">ADD TO CART</string>
+    <string name="description">Grab your fork, knife or raise your glass and prepare yourself to embark on this delicious journey. Enjoy and have a delightful experience with every sip or bite. Good foods!</string>
+    <string name="order_detail">Order Detail</string>
+    <string name="tl">₺</string>
 </resources>
