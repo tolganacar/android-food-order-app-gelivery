@@ -19,8 +19,8 @@
 
             <ImageView
                 android:id="@+id/imageViewStar4"
-                android:layout_width="18dp"
-                android:layout_height="18dp"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -29,8 +29,8 @@
 
             <ImageView
                 android:id="@+id/imageViewStar3"
-                android:layout_width="18dp"
-                android:layout_height="18dp"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
                 android:layout_marginStart="6dp"
                 app:layout_constraintBottom_toBottomOf="@+id/imageViewStar1"
                 app:layout_constraintStart_toEndOf="@+id/imageViewStar1"
@@ -39,8 +39,8 @@
 
             <ImageView
                 android:id="@+id/imageViewStar2"
-                android:layout_width="18dp"
-                android:layout_height="18dp"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
                 android:layout_marginStart="6dp"
                 app:layout_constraintBottom_toBottomOf="@+id/imageViewStar4"
                 app:layout_constraintStart_toEndOf="@+id/imageViewStar4"
@@ -52,7 +52,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/izgarasomon" />
@@ -118,8 +117,8 @@
 
             <ImageView
                 android:id="@+id/imageViewStar1"
-                android:layout_width="18dp"
-                android:layout_height="18dp"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
                 android:layout_marginStart="6dp"
                 app:layout_constraintBottom_toBottomOf="@+id/imageViewStar2"
                 app:layout_constraintStart_toEndOf="@+id/imageViewStar2"
@@ -128,8 +127,8 @@
 
             <ImageView
                 android:id="@+id/imageViewStar5"
-                android:layout_width="18dp"
-                android:layout_height="18dp"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
                 android:layout_marginStart="6dp"
                 app:layout_constraintBottom_toBottomOf="@+id/imageViewStar3"
                 app:layout_constraintStart_toEndOf="@+id/imageViewStar3"

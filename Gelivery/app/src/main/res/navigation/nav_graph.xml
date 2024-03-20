@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/foodListFragment"
-        android:name="com.tolganacar.foodorderapp.ui.fragments.FoodListFragment"
+        android:name="com.tolganacar.gelivery.ui.fragments.FoodListFragment"
         android:label="fragment_food_list"
         tools:layout="@layout/fragment_food_list" >
         <action
@@ -16,16 +16,16 @@
     </fragment>
     <fragment
         android:id="@+id/foodDetailFragment"
-        android:name="com.tolganacar.foodorderapp.ui.fragments.FoodDetailFragment"
+        android:name="com.tolganacar.gelivery.ui.fragments.FoodDetailFragment"
         android:label="fragment_food_detail"
         tools:layout="@layout/fragment_food_detail" >
         <argument
             android:name="food"
-            app:argType="com.tolganacar.foodorderapp.data.entity.Foods" />
+            app:argType="com.tolganacar.gelivery.data.entity.Foods" />
     </fragment>
     <fragment
         android:id="@+id/cartFragment"
-        android:name="com.tolganacar.foodorderapp.ui.fragments.CartFragment"
+        android:name="com.tolganacar.gelivery.ui.fragments.CartFragment"
         android:label="fragment_cart"
         tools:layout="@layout/fragment_cart" />
 </navigation>

@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.tolganacar.foodorderapp"
+    namespace = "com.tolganacar.gelivery"
     compileSdk = 34
 
     buildFeatures {
@@ -15,7 +15,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.tolganacar.foodorderapp"
+        applicationId = "com.tolganacar.gelivery"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
