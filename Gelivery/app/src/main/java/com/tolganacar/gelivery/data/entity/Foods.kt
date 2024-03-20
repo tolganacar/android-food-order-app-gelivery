@@ -1,4 +1,4 @@
-package com.tolganacar.foodorderapp.data.entity
+package com.tolganacar.gelivery.data.entity
 
 import java.io.Serializable
 

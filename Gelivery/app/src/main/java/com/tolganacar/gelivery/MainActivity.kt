@@ -1,11 +1,13 @@
-package com.tolganacar.foodorderapp
+package com.tolganacar.gelivery
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
-import com.tolganacar.foodorderapp.databinding.ActivityMainBinding
+import com.tolganacar.gelivery.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding

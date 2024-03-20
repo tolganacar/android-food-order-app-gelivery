@@ -1,13 +1,16 @@
-package com.tolganacar.foodorderapp.ui.adapter
+package com.tolganacar.gelivery.ui.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.tolganacar.foodorderapp.data.entity.Foods
-import com.tolganacar.foodorderapp.databinding.FoodRecyclerRowBinding
+import com.tolganacar.gelivery.databinding.FoodRecyclerRowBinding
+import com.tolganacar.gelivery.data.entity.Foods
+import com.tolganacar.gelivery.ui.fragments.FoodListFragmentDirections
+import com.tolganacar.gelivery.utils.nav
 
 class FoodsAdapter(
     var mContext: Context,
@@ -27,16 +30,21 @@ class FoodsAdapter(
         val t = holder.binding
 
         t.textViewFoodName.text = food.yemek_adi
-        resimGoster(food.yemek_resim_adi, t.imageViewFood)
+        showFoodImage(food.yemek_resim_adi, t.imageViewFood)
         t.textViewPrice.text = food.yemek_fiyat.toString()
+
+        t.cardViewFood.setOnClickListener {
+            val gecis = FoodListFragmentDirections.actionFoodListFragmentToFoodDetailFragment(food = food)
+            Navigation.nav(it,gecis)
+        }
     }
 
     override fun getItemCount(): Int {
         return foodList.size
     }
 
-    fun resimGoster(imageName: String, imageView: ImageView) {
+    fun showFoodImage(imageName: String, imageView: ImageView) {
         val url = "http://kasimadalan.pe.hu/yemekler/resimler/$imageName"
-        Glide.with(mContext.applicationContext).load(url).into(imageView)
+        Glide.with(mContext.applicationContext).load(url).override(490, 490).into(imageView)
     }
 }

@@ -1,13 +1,15 @@
-package com.tolganacar.foodorderapp.ui.fragments
+package com.tolganacar.gelivery.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.tolganacar.foodorderapp.R
+import com.tolganacar.gelivery.R
+import dagger.hilt.android.AndroidEntryPoint
 
-class FoodDetailFragment : Fragment() {
+@AndroidEntryPoint
+class CartFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,6 +19,6 @@ class FoodDetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_food_detail, container, false)
+        return inflater.inflate(R.layout.fragment_cart, container, false)
     }
 }

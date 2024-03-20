@@ -1,4 +1,4 @@
-package com.tolganacar.foodorderapp
+package com.tolganacar.gelivery
 
 import org.junit.Test
 

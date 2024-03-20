@@ -1,10 +1,11 @@
-package com.tolganacar.foodorderapp
+package com.tolganacar.gelivery
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import com.tolganacar.gelivery.R
 
 class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
