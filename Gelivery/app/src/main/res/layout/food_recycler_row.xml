@@ -109,7 +109,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="₺"
-                android:textColor="#E54646"
+                android:textColor="@color/tl_color"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="@+id/textViewPrice"
                 app:layout_constraintEnd_toStartOf="@+id/textViewPrice"

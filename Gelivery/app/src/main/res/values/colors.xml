@@ -4,4 +4,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="yellow">#FEC231</color>
     <color name="hint_color">#636363</color>
+    <color name="tl_color">#E54646</color>
 </resources>

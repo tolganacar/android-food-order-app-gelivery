@@ -6,13 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
-import com.tolganacar.gelivery.R
+import com.google.android.material.snackbar.Snackbar
 import com.tolganacar.gelivery.databinding.FragmentFoodDetailBinding
+import com.tolganacar.gelivery.ui.viewmodel.FoodDetailViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class FoodDetailFragment : Fragment() {
     private lateinit var binding: FragmentFoodDetailBinding
+    private lateinit var viewModel: FoodDetailViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,7 +28,7 @@ class FoodDetailFragment : Fragment() {
         val bundle:FoodDetailFragmentArgs by navArgs()
         val foodDetail = bundle.food
         var quantity = 1
-        var foodPrice = foodDetail.yemek_fiyat.toString()
+        val foodPrice = foodDetail.yemek_fiyat.toString()
         var totalPrice = foodDetail.yemek_fiyat.toString()
 
         binding.textViewFoodNameDetail.text = foodDetail.yemek_adi
@@ -47,11 +52,18 @@ class FoodDetailFragment : Fragment() {
             }
         }
 
+        binding.buttonAddToCart.setOnClickListener {
+            viewModel.addToCart(foodDetail.yemek_adi, foodDetail.yemek_resim_adi, foodDetail.yemek_fiyat, quantity, "nacar")
+            Snackbar.make(it, "${foodDetail.yemek_adi} has been added to the cart.", Snackbar.LENGTH_SHORT).show()
+        }
+
         return binding.root
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val tempViewModel: FoodDetailViewModel by viewModels()
+        viewModel = tempViewModel
     }
 
     fun showFoodImage(imageName: String, imageView: ImageView) {
