@@ -23,7 +23,7 @@
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:src="@drawable/star"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewFoodNameDetail" />
@@ -45,7 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:text="@string/_150_kcal"
         android:textColor="@color/hint_color"
         android:textSize="18sp"
@@ -171,7 +171,7 @@
         android:id="@+id/textViewDeliveryTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:text="@string/_20_min"
         android:textColor="@color/hint_color"
@@ -254,11 +254,9 @@
             android:layout_gravity="center"
             android:fontFamily="@font/pacifico"
             android:gravity="center"
-            android:text="@string/order_detail"
+            android:text="@string/food_detail"
             android:textColor="@color/white"
-            android:textSize="26sp"
-            tools:layout_editor_absoluteX="138dp"
-            tools:layout_editor_absoluteY="14dp" />
+            android:textSize="26sp" />
 
     </androidx.appcompat.widget.Toolbar>
 </androidx.constraintlayout.widget.ConstraintLayout>
