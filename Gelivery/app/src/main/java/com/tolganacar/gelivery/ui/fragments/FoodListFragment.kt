@@ -5,9 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.tolganacar.gelivery.databinding.FragmentFoodListBinding
 import com.tolganacar.gelivery.ui.adapter.FoodsAdapter
 import com.tolganacar.gelivery.ui.viewmodel.FoodListViewModel
@@ -29,6 +29,22 @@ class FoodListFragment : Fragment() {
             binding.recyclerViewFood.adapter = foodsAdapter
             binding.recyclerViewFood.layoutManager = GridLayoutManager(requireContext(), 2)
         }
+
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextChange(newText: String): Boolean {
+                if (newText.isEmpty()) {
+                    viewModel.loadFoods()
+                } else {
+                    viewModel.searchFoods(newText)
+                }
+                return true
+            }
+            override fun onQueryTextSubmit(query: String): Boolean {
+                viewModel.searchFoods(query)
+                return true
+            }
+        })
+
 
         return binding.root
     }
