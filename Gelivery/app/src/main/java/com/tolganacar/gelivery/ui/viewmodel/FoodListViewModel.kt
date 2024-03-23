@@ -23,4 +23,11 @@ class FoodListViewModel @Inject constructor(var foodsRepository: FoodsRepository
             foodList.value = foodsRepository.loadFoods()
         }
     }
+
+    fun searchFoods(searchQuery: String) {
+        val filteredList = foodList.value?.filter { food ->
+            food.yemek_adi.contains(searchQuery, ignoreCase = true)
+        }
+        foodList.value = filteredList
+    }
 }
