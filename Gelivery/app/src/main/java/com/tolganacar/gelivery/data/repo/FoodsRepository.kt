@@ -1,6 +1,7 @@
 package com.tolganacar.gelivery.data.repo
 
 import com.tolganacar.gelivery.data.datasource.FoodsDataSource
+import com.tolganacar.gelivery.data.entity.CartFoods
 import com.tolganacar.gelivery.data.entity.Foods
 
 class FoodsRepository(var foodsDataSource: FoodsDataSource) {
@@ -20,4 +21,8 @@ class FoodsRepository(var foodsDataSource: FoodsDataSource) {
         yemek_siparis_adet,
         kullanici_adi
     )
+
+    suspend fun getCartFoods(kullanici_adi: String) : List<CartFoods> = foodsDataSource.getCartFoods(kullanici_adi)
+
+    suspend fun deleteFood(sepet_yemek_id: Int, kullanici_adi: String) = foodsDataSource.deleteFood(sepet_yemek_id, kullanici_adi)
 }

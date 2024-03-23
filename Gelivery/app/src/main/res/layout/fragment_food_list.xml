@@ -25,9 +25,7 @@
             android:gravity="center"
             android:text="@string/app_name"
             android:textColor="@color/white"
-            android:textSize="26sp"
-            tools:layout_editor_absoluteX="138dp"
-            tools:layout_editor_absoluteY="14dp" />
+            android:textSize="26sp" />
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView

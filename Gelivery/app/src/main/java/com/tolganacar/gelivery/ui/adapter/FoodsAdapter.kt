@@ -43,7 +43,7 @@ class FoodsAdapter(
         return foodList.size
     }
 
-    fun showFoodImage(imageName: String, imageView: ImageView) {
+    private fun showFoodImage(imageName: String, imageView: ImageView) {
         val url = "http://kasimadalan.pe.hu/yemekler/resimler/$imageName"
         Glide.with(mContext.applicationContext).load(url).override(490, 490).into(imageView)
     }

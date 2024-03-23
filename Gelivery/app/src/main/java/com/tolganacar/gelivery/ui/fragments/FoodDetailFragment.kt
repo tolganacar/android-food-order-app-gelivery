@@ -1,5 +1,6 @@
 package com.tolganacar.gelivery.ui.fragments
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -54,7 +55,10 @@ class FoodDetailFragment : Fragment() {
 
         binding.buttonAddToCart.setOnClickListener {
             viewModel.addToCart(foodDetail.yemek_adi, foodDetail.yemek_resim_adi, foodDetail.yemek_fiyat, quantity, "nacar")
-            Snackbar.make(it, "${foodDetail.yemek_adi} has been added to the cart.", Snackbar.LENGTH_SHORT).show()
+            Snackbar.make(it, "${foodDetail.yemek_adi} has been added to the cart.", Snackbar.LENGTH_SHORT)
+                .setBackgroundTint(Color.YELLOW)
+                .setTextColor(Color.BLACK)
+                .show()
         }
 
         return binding.root
