@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
+    <color name="black">#FFFFFFFF</color>
     <color name="white">#FFFFFFFF</color>
     <color name="yellow">#FEC231</color>
-    <color name="hint_color">#636363</color>
+    <color name="hint_color">#9F9F9F</color>
     <color name="tl_color">#E54646</color>
     <color name="button_color">#FF000000</color>
 </resources>

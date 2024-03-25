@@ -8,6 +8,7 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
+import com.tolganacar.gelivery.R
 import com.tolganacar.gelivery.data.entity.CartFoods
 import com.tolganacar.gelivery.databinding.CartRecyclerRowBinding
 import com.tolganacar.gelivery.ui.viewmodel.CartViewModel
@@ -38,11 +39,17 @@ class CartAdapter(
         t.textViewFoodTotalPriceCart.text = foodTotalPrice
 
         t.imageViewDeleteFoodCart.setOnClickListener {
-            Snackbar.make(it,"Are you sure you want to delete ${foodCart.yemek_adi}?", Snackbar.LENGTH_LONG)
+            Snackbar.make(it, foodCart.yemek_adi +" "+ mContext.resources.getText(R.string.delete), Snackbar.LENGTH_LONG)
                 .setActionTextColor(Color.YELLOW)
-                .setAction("YES"){
+                .setAction(R.string.yes){
+                    Snackbar.make(it, foodCart.yemek_adi +" "+ mContext.resources.getText(R.string.was_deleted), Snackbar.LENGTH_SHORT).setBackgroundTint(Color.YELLOW)
+                        .setTextColor(Color.BLACK)
+                        .show()
                     viewModel.deleteFood(foodCart.sepet_yemek_id, "nacar")
-                }.show()
+                }.setBackgroundTint(Color.YELLOW)
+                .setActionTextColor(Color.RED)
+                .setTextColor(Color.BLACK)
+                .show()
         }
     }
 
