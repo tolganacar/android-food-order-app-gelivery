@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
+import com.tolganacar.gelivery.R
 import com.tolganacar.gelivery.databinding.FragmentFoodDetailBinding
 import com.tolganacar.gelivery.ui.viewmodel.FoodDetailViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -55,7 +56,7 @@ class FoodDetailFragment : Fragment() {
 
         binding.buttonAddToCart.setOnClickListener {
             viewModel.addToCart(foodDetail.yemek_adi, foodDetail.yemek_resim_adi, foodDetail.yemek_fiyat, quantity, "nacar")
-            Snackbar.make(it, "${foodDetail.yemek_adi} has been added to the cart.", Snackbar.LENGTH_SHORT)
+            Snackbar.make(it, foodDetail.yemek_adi +" "+ resources.getText(R.string.add_cart), Snackbar.LENGTH_SHORT)
                 .setBackgroundTint(Color.YELLOW)
                 .setTextColor(Color.BLACK)
                 .show()
