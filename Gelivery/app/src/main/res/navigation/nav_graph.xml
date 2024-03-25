@@ -12,7 +12,11 @@
         tools:layout="@layout/fragment_food_list" >
         <action
             android:id="@+id/action_foodListFragment_to_foodDetailFragment"
-            app:destination="@id/foodDetailFragment" />
+            app:destination="@id/foodDetailFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/foodDetailFragment"
