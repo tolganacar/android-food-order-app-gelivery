@@ -9,13 +9,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import com.tolganacar.gelivery.R
-import com.tolganacar.gelivery.data.entity.CartFoods
 import com.tolganacar.gelivery.databinding.CartRecyclerRowBinding
 import com.tolganacar.gelivery.ui.viewmodel.CartViewModel
+import com.tolganacar.gelivery.ui.viewmodel.model.CartUI
 
 class CartAdapter(
     var mContext: Context,
-    var foodCartList: List<CartFoods>,
+    var foodCartList: List<CartUI>,
     var viewModel: CartViewModel
 ) : RecyclerView.Adapter<CartAdapter.FoodCartViewHolder>() {
 
@@ -35,7 +35,7 @@ class CartAdapter(
         t.textViewFoodNameCart.text = foodCart.yemek_adi
         showFoodImage(foodCart.yemek_resim_adi, t.imageViewCartFood)
         t.textViewPriceCart.text = foodCart.yemek_fiyat.toString()
-        t.textViewFoodQuantityCart.text = foodCart.yemek_siparis_adet.toString()
+        t.textViewFoodQuantityCart.text = foodCart.yemek_siparis_adet.toString() //sepet_yemek_id_list.size.toString()
         t.textViewFoodTotalPriceCart.text = foodTotalPrice
 
         t.imageViewDeleteFoodCart.setOnClickListener {
@@ -45,7 +45,7 @@ class CartAdapter(
                     Snackbar.make(it, foodCart.yemek_adi +" "+ mContext.resources.getText(R.string.was_deleted), Snackbar.LENGTH_SHORT).setBackgroundTint(Color.YELLOW)
                         .setTextColor(Color.BLACK)
                         .show()
-                    viewModel.deleteFood(foodCart.sepet_yemek_id, "nacar")
+                    viewModel.deleteAllFoodByName(foodCart.yemek_adi, "nacar")
                 }.setBackgroundTint(Color.YELLOW)
                 .setActionTextColor(Color.RED)
                 .setTextColor(Color.BLACK)
