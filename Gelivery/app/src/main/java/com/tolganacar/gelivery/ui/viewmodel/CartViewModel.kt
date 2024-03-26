@@ -2,8 +2,9 @@ package com.tolganacar.gelivery.ui.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.tolganacar.gelivery.data.entity.CartFoods
 import com.tolganacar.gelivery.data.repo.FoodsRepository
+import com.tolganacar.gelivery.ui.viewmodel.mapper.FoodsRepositoryMapper
+import com.tolganacar.gelivery.ui.viewmodel.model.CartUI
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -12,8 +13,11 @@ import java.lang.Exception
 import javax.inject.Inject
 
 @HiltViewModel
-class CartViewModel @Inject constructor(var foodsRepository: FoodsRepository) : ViewModel() {
-    var foodCartList = MutableLiveData<List<CartFoods>>()
+class CartViewModel @Inject constructor(
+    var foodsRepository: FoodsRepository,
+    private val mapper: FoodsRepositoryMapper
+) : ViewModel() {
+    var foodCartList = MutableLiveData<List<CartUI>>()
     var totalPrice = MutableLiveData<Int>()
 
     init {
@@ -23,22 +27,23 @@ class CartViewModel @Inject constructor(var foodsRepository: FoodsRepository) : 
     fun deleteAllFoods(kullanici_adi: String) {
         CoroutineScope(Dispatchers.Main).launch {
             foodCartList.value?.forEach { food ->
-                foodsRepository.deleteFood(food.sepet_yemek_id, kullanici_adi)
+                food.sepet_yemek_id_list.forEach {
+                    foodsRepository.deleteFood(it, kullanici_adi)
+                }
             }
             foodCartList.value = emptyList()
             calculateTotalPrice()
         }
     }
 
-    fun deleteFood(sepet_yemek_id: Int, kullanici_adi: String) {
+    fun deleteAllFoodByName(name: String, kullanici_adi: String) {
         CoroutineScope(Dispatchers.Main).launch {
-            if (foodCartList.value?.size == 1) {
-                foodsRepository.deleteFood(sepet_yemek_id, kullanici_adi)
-                foodCartList.value = emptyList()
-                calculateTotalPrice()
-            } else {
-                foodsRepository.deleteFood(sepet_yemek_id, kullanici_adi)
-                calculateTotalPrice()
+            foodCartList.value?.forEach {
+                if (it.yemek_adi == name) {
+                    it.sepet_yemek_id_list.forEach { id ->
+                        foodsRepository.deleteFood(id, kullanici_adi)
+                    }
+                }
             }
             getCartFoods("nacar")
         }
@@ -47,10 +52,12 @@ class CartViewModel @Inject constructor(var foodsRepository: FoodsRepository) : 
     fun getCartFoods(kullanici_adi: String) {
         CoroutineScope(Dispatchers.Main).launch {
             try {
-                foodCartList.value = foodsRepository.getCartFoods(kullanici_adi)
+                foodCartList.value = mapper.map(foodsRepository.getCartFoods(kullanici_adi))
                 calculateTotalPrice()
             } catch (e: Exception) {
                 e.printStackTrace()
+                foodCartList.value = listOf()
+                calculateTotalPrice()
             }
         }
     }
