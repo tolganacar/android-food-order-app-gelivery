@@ -26,12 +26,24 @@ class CartFragment : Fragment() {
     ): View? {
         binding = FragmentCartBinding.inflate(inflater, container, false)
 
+        observeFoodCartList()
+        observeTotalPrice()
+        buttonConfirmCartOnClick()
+
+        viewModel.getCartFoods("nacar")
+
+        return binding.root
+    }
+
+    private fun observeFoodCartList() {
         viewModel.foodCartList.observe(viewLifecycleOwner) {
             val cartAdapter = CartAdapter(requireContext(), it, viewModel)
             binding.recyclerViewCart.adapter = cartAdapter
             binding.recyclerViewCart.layoutManager = LinearLayoutManager(requireContext())
         }
+    }
 
+    private fun observeTotalPrice() {
         viewModel.totalPrice.observe(viewLifecycleOwner) {
             binding.textViewSubtotalPrice.text = it.toString()
             if (binding.textViewSubtotalPrice.text.equals("0")) {
@@ -40,7 +52,9 @@ class CartFragment : Fragment() {
                 binding.textViewTotalPriceCart.text = (it + 10).toString()
             }
         }
+    }
 
+    private fun buttonConfirmCartOnClick() {
         binding.buttonConfirmCart.setOnClickListener {
             if (!viewModel.foodCartList.value.isNullOrEmpty()) {
                 Snackbar.make(it, resources.getText(R.string.confirm), Snackbar.LENGTH_LONG)
@@ -65,12 +79,7 @@ class CartFragment : Fragment() {
                     .setBackgroundTint(Color.WHITE)
                     .show()
             }
-
         }
-
-        viewModel.getCartFoods("nacar")
-
-        return binding.root
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
