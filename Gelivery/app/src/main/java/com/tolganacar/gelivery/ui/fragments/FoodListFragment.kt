@@ -24,12 +24,21 @@ class FoodListFragment : Fragment() {
     ): View? {
         binding = FragmentFoodListBinding.inflate(inflater, container, false)
 
+        observeFoodList()
+        searchViewQueryTextListener()
+
+        return binding.root
+    }
+
+    private fun observeFoodList() {
         viewModel.foodList.observe(viewLifecycleOwner){
             val foodsAdapter = FoodsAdapter(requireContext(),it)
             binding.recyclerViewFood.adapter = foodsAdapter
             binding.recyclerViewFood.layoutManager = GridLayoutManager(requireContext(), 2)
         }
+    }
 
+    private fun searchViewQueryTextListener() {
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextChange(newText: String): Boolean {
                 if (newText.isEmpty()) {
@@ -44,9 +53,6 @@ class FoodListFragment : Fragment() {
                 return true
             }
         })
-
-
-        return binding.root
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
