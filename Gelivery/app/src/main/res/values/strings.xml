@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Gelivery</string>
+    <string name="increase_quantity">+</string>
+    <string name="decrease_quantity">–</string>
+    <string name="_20_min">20 min</string>
+    <string name="_150_kcal">150 Kcal</string>
+    <string name="_1">1</string>
+    <string name="add_to_cart">ADD TO CART</string>
+    <string name="food_detail">Food Detail</string>
+    <string name="tl">₺</string>
+    <string name="home">Home</string>
+    <string name="cart">Cart</string>
+    <string name="my_cart">My Cart</string>
+    <string name="confirm_cart">CONFIRM CART</string>
+    <string name="pieces">pieces</string>
+    <string name="_0">0</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="_10">₺10</string>
+    <string name="delivery">Delivery</string>
+    <string name="total">Total</string>
+    <string name="yes">YES</string>
+    <string name="was_deleted">was deleted.</string>
+    <string name="delete">are you sure you want to delete?</string>
+    <string name="confirm">Confirm your order?</string>
+    <string name="confirmed">Your order has been confirmed.</string>
+    <string name="add_items">Please add items to your cart!</string>
+    <string name="add_cart">has been added to the cart.</string>
+
+</resources>
